@@ -1,9 +1,28 @@
-<div class="container">
-    <button class="btn btn-primary" (click)="guardarCliente()">Guardar Cliente</button>
-    <button class="btn btn-danger" (click)="leerCliente()">Leer Cliente</button>
+<div class="container ">
+    <div class="btn-group">
+        <button class="btn btn-primary m-3" (click)="guardarCliente()">Guardar Cliente</button>
+        <button class="btn btn-primary m-3" (click)="guardarProductos()">Guardar Productos</button>
+        <button class="btn btn-danger m-3" (click)="leer()">Leer </button>
+    </div>
 
-    <div *ngFor="let cliente of clientes">
-        <p>Cliente: {{cliente.nombre}}</p>
-        <p>Edad: {{cliente.edad}}</p>
+    <div class="btn-group">
+        <button class="btn btn-warning m-3" (click)="eliminarCliente()">Eliminar Clientes </button>
+        <button class="btn btn-warning m-3" (click)="eliminarProducto()">Eliminar Productos </button>
+        <button class="btn btn-warning m-3" (click)="eliminarTodo()">Eliminar Todo </button>
+    </div>
+   
+    
+    <div class="container">
+        <div class="card mt-3 p-3" *ngFor="let cliente of clientes">
+            <p>Cliente: {{cliente.nombre}}</p>
+            <p>Edad: {{cliente.edad}}</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card mt-3 p-3" *ngFor="let producto of productos">
+            <p>Nombre Producto: {{producto.nombre}}</p>
+            <p>Precio: {{producto.precio | currency: 'ARG'}}</p>
+        </div>
     </div>
 </div>
