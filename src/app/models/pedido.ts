@@ -31,8 +31,16 @@ export class Pedido{
     {
         this.pedidoDetalle.push(pedidoDetalle)
     }
+    this.actualizarTotal()
     
-    
+  }
+
+  private actualizarTotal()
+  { 
+    this.total = 0
+    this.pedidoDetalle.forEach(producto=>{
+        this.total = this.total + producto.total
+    })
   }
 
     
