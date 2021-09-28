@@ -33,6 +33,7 @@ export class PedidosService {
   {
     let listadoPedidos: Pedido[] = new Array<Pedido>()
     listadoPedidos = this.listadoPedidosLocalStorage
+    this.pedido.pedidoId = listadoPedidos.length + 1
     listadoPedidos.push(this.pedido)
     localStorage.setItem("pedidos", JSON.stringify(listadoPedidos))
     localStorage.removeItem("ultimoPedido")
