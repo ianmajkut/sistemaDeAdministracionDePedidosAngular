@@ -24,4 +24,9 @@ export class ProductosComponent implements OnInit {
     })
   }
 
+  agregar(producto: Productos)
+  {
+    this.pedidosServicio.pedido.agregarProdutcoAlPedido(producto)
+    console.log(this.pedidosServicio.pedido)    
+  } 
 }
