@@ -11,7 +11,7 @@ import { PedidosService } from '../services/pedidos.service';
 })
 export class HomeComponent implements OnInit {
   clientes: Array<Clientes> = new Array<Clientes>();
-
+  alert:boolean = false
   constructor(public clientesServicio: ClientesService, public pedidosServicio: PedidosService, public route: Router) { }
 
   ngOnInit(): void {
@@ -40,6 +40,12 @@ export class HomeComponent implements OnInit {
     this.clientes.splice(posicion,1)
     
     localStorage.setItem('clientes', JSON.stringify(this.clientes))
+    this.alert = true
+  }
+
+  cerrarAlert()
+  {
+    this.alert = false
   }
 
 }

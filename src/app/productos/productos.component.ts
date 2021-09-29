@@ -10,7 +10,9 @@ import { ProductosService } from '../services/productos.service';
 })
 export class ProductosComponent implements OnInit {
   productos: Array<Productos> = new Array<Productos>()
-
+  alert:boolean = false
+  alertEliminar:boolean = false
+  alertCliente: boolean = true
   constructor(public productosServicio: ProductosService, public pedidosServicio: PedidosService) { }
 
   ngOnInit(): void {
@@ -28,11 +30,28 @@ export class ProductosComponent implements OnInit {
   {
     this.pedidosServicio.pedido.agregarProdutcoAlPedido(producto)
     this.pedidosServicio.guardarLocalStorage()
-    alert("Producto Agregado")
+    this.alert = true
        
   } 
+
+  cerrarAlert()
+  {
+    this.alert = false
+  }
+
+  cerrarAlertEliminar()
+  {
+    this.alertEliminar = false
+  }
+
+  cerrarWarning()
+  {
+    this.alertCliente = false
+  }
+
   eliminar(posicion: number){
     this.productos.splice(posicion,1)
     localStorage.setItem('productos', JSON.stringify(this.productos))
+    this.alertEliminar = true
   }
 }

@@ -9,6 +9,7 @@ import { ClientesService } from '../services/clientes.service';
   styleUrls: ['./agregar-clientes.component.css']
 })
 export class AgregarClientesComponent implements OnInit {
+  alert:boolean = false
   formularioAgregar!: FormGroup;
   cliente: Clientes = new Clientes();
   constructor(private fb: FormBuilder, public clienteServicio: ClientesService) { }
@@ -25,6 +26,12 @@ export class AgregarClientesComponent implements OnInit {
     this.cliente = this.formularioAgregar.value as Clientes;
     this.clienteServicio.agregarLocalStorage(this.cliente);
     this.formularioAgregar.reset();
+    this.alert = true
+  }
+
+  cerrarAlert()
+  {
+    this.alert = false
   }
 
 }

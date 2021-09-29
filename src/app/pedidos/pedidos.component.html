@@ -1,4 +1,10 @@
 <div class="container mt-3">
+          <div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong>Felicidades!</strong> Agregaste un pedido correctamente. Dirígite a "Listado De Pedido" para verlo
+            <button (click)="cerrarAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
           <div class="cliente">
                     <h5>Cliente: {{this.pedidosServicio.pedido.nombreCliente}}</h5>
                     <h6>Total: {{this.pedidosServicio.pedido.total | currency: "ARG"}}</h6>

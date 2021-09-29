@@ -11,6 +11,7 @@ import { ProductosService } from '../services/productos.service';
 export class AgregarProductosComponent implements OnInit {
   formularioAgregarProducto!: FormGroup;
   producto: Productos = new Productos();
+  alert:boolean = false
   
   constructor(private fb: FormBuilder, public productoServicio: ProductosService) { }
 
@@ -26,6 +27,12 @@ export class AgregarProductosComponent implements OnInit {
     this.producto = this.formularioAgregarProducto.value as Productos
     this.productoServicio.agregarLocalStorage(this.producto)
     this.formularioAgregarProducto.reset()
+    this.alert = true
+  }
+
+  cerrarAlert()
+  {
+    this.alert = false
   }
 
   

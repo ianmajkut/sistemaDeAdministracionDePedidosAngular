@@ -8,7 +8,7 @@ import { PedidosService } from '../services/pedidos.service';
   styleUrls: ['./pedidos.component.css']
 })
 export class PedidosComponent implements OnInit {
-
+  alert:boolean = false
   constructor(public pedidosServicio: PedidosService) { 
     
   }
@@ -26,6 +26,11 @@ export class PedidosComponent implements OnInit {
   guardar()
   {
     this.pedidosServicio.guardarPedido()
+    this.alert = true
+  }
+  cerrarAlert()
+  {
+    this.alert = false
   }
 
   eliminar(posicion: number)
