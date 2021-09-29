@@ -8,7 +8,7 @@
 
     <div class="row mt-4">
         
-        <div class="col-sm-3" *ngFor="let producto of productos">
+        <div class="col-sm-3" *ngFor="let producto of productos; let posicion = index">
             <div class="card" style="width: 200;">
                 <div class="card-body">
                   <h5 class="card-title">{{producto.nombre}} </h5>
@@ -16,7 +16,7 @@
                   <p class="card-text">{{producto.descripcion}}</p>
                   <p class="card-text strong">{{producto.precio | currency: "ARG"}}</p>
                   <button class="btn btn-primary" (click)="agregar(producto)">Agregar</button>
-                  
+                  <button class="btn btn-danger" (click)="eliminar(posicion)">Eliminar</button>
                 </div>
             </div>
 

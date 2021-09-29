@@ -33,5 +33,13 @@ export class HomeComponent implements OnInit {
     this.route.navigateByUrl("/productos")
 
   }
+ 
+  eliminar(posicion:number)
+  {
+    
+    this.clientes.splice(posicion,1)
+    
+    localStorage.setItem('clientes', JSON.stringify(this.clientes))
+  }
 
 }

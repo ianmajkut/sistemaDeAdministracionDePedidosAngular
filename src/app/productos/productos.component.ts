@@ -31,4 +31,8 @@ export class ProductosComponent implements OnInit {
     alert("Producto Agregado")
        
   } 
+  eliminar(posicion: number){
+    this.productos.splice(posicion,1)
+    localStorage.setItem('productos', JSON.stringify(this.productos))
+  }
 }
