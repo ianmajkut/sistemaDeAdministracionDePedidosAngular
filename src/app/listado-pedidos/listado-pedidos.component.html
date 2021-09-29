@@ -1,13 +1,20 @@
 <div class="container">
+          <div *ngIf="estaVacio" class="container d-flex align-items-center mt-5 flex-column">
+                    <h2 style="color:grey">No hay ningún pedido guardado.</h2>
+                    <h2 style="color:grey">Por favor concrete algún pedido.</h2>
+                    
+          </div>
           <div class="row mt-4">
-                    <div class="col-sm-3" *ngFor="let pedido of listadoPedidos">
+                    <div class="col-sm-3" *ngFor="let pedido of listadoPedidos; let posicion = index">
                               <div class="card" style="width: 200;">
                               <div class="card-body">
                               <h5 class="card-title">{{pedido.nombreCliente}}</h5>
                               <h6 class="card-subtitle mb-2 text-muted">{{pedido.total | currency: "ARGS"}}</h6>
                               <p class="card-text">Cantidad de Productos: {{pedido.pedidoDetalle.length}}</p>
                               </div>
+                              <button class="btn btn-danger" (click)="eliminar(posicion)">Eliminar</button>
                               </div>
+                              
                     
                     </div>
             

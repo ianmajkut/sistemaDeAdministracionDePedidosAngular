@@ -33,7 +33,7 @@
             <div class="card" style="width: 200;">
                 <div class="card-body">
                   <h5 class="card-title">{{producto.nombre}} </h5>
-                  <h6 class="card-subtitle mb-2 text-muted">{{producto.productoId}}</h6>
+                  <h6 class="card-subtitle mb-2 text-muted">Id: {{producto.productoId}}</h6>
                   <p class="card-text">{{producto.descripcion}}</p>
                   <p class="card-text strong">{{producto.precio | currency: "ARG"}}</p>
                   <button class="btn btn-primary" (click)="agregar(producto)">Agregar</button>

@@ -18,8 +18,8 @@
             <div class="card" style="width: 200;">
                 <div class="card-body">
                   <h5 class="card-title">{{cliente.nombre}} {{cliente.apellido}}</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">{{cliente.clienteId}}</h6>
-                  <p class="card-text">{{cliente.direccion}}</p>
+                  <h6 class="card-subtitle mb-2 text-muted">Id: {{cliente.clienteId}}</h6>
+                  <p class="card-text">Dirección: {{cliente.direccion}}</p>
                   <button class="btn btn-primary" (click)="irAProductos(cliente)">Seleccionar</button>
                   <button class="btn btn-danger" (click)="eliminar(posicion)">Eliminar</button>
                 </div>
