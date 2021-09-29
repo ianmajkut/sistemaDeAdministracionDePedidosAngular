@@ -28,6 +28,7 @@ export class ProductosComponent implements OnInit {
   {
     this.pedidosServicio.pedido.agregarProdutcoAlPedido(producto)
     this.pedidosServicio.guardarLocalStorage()
-    console.log(this.pedidosServicio.pedido)    
+    alert("Producto Agregado")
+       
   } 
 }

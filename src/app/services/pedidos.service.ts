@@ -47,7 +47,7 @@ export class PedidosService {
     {
       return new Array<Pedido>();
     }
-    return pedidos
+    return pedidos.sort((a,b)=>b.pedidoId -a.pedidoId)
   }
   
   
