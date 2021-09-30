@@ -1,27 +1,30 @@
 # Sistema de Administación de Pedidos
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.
+Aplicación Web utilizando Angular diseñada para implementar conceptos relacionados a [Services](https://angular.io/tutorial/toh-pt4), [FormBuilder](https://angular.io/api/forms/FormBuilder), [Reactive Forms](https://angular.io/guide/reactive-forms), LocalStorage, entre otras cosas.
 
-## Development server
+## Vista General
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![alt text](https://github.com/ianmajkut/sistemaDeAdministacionDePedidosAngular/blob/main/review%20general.gif)
 
-## Code scaffolding
+## Clientes
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+La creación de clientes se gestiona completando un formulario y, si cumple con los requisitos, es subido al localStorage con su keyName “clientes” y su correspondiente Id. También tendremos la posibilidad de eliminar los clientes que deseemos.
 
-## Build
+![alt text](https://github.com/ianmajkut/sistemaDeAdministacionDePedidosAngular/blob/main/clientes.gif)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Productos
 
-## Running unit tests
+Al igual que los clientes, los productos se gestionan utilizando un formulario y podremos eliminarlos también. Para que se realice el pedido de manera correcta, debe asegurarse de haber seleccionado un cliente cuyo nombre aparecerá en el encabezado.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![alt text](https://github.com/ianmajkut/sistemaDeAdministacionDePedidosAngular/blob/main/productos.gif)
 
-## Running end-to-end tests
+## Pedidos y listado de pedidos
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+En la sección Pedidos nos figurará los productos que hemos seleccionado y podremos modificar la cantidad, lo cual se verá reflejado en el precio.
+En caso de no guardar ningún pedido, la sección Listado de Pedidos estará vacía.
 
-## Further help
+![alt text](https://github.com/ianmajkut/sistemaDeAdministacionDePedidosAngular/blob/main/pedidos%20vacio.png)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+En caso de tener todos los campos necesarios, los listados de pedidos saldrán de la siguiente manera.
+
+![alt text](https://github.com/ianmajkut/sistemaDeAdministacionDePedidosAngular/blob/main/pedidos%20y%20listado%20de%20pedidos.gif)
